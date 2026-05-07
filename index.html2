@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>FF Rare ID Zone</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
 
@@ -18,38 +18,49 @@ scroll-behavior:smooth;
 }
 
 body{
-background:#050816;
+background:#040816;
 color:white;
 overflow-x:hidden;
+}
+
+/* SCROLLBAR */
+
+::-webkit-scrollbar{
+width:8px;
+}
+
+::-webkit-scrollbar-thumb{
+background:#00eeff;
+border-radius:10px;
 }
 
 /* NAVBAR */
 
 nav{
-width:100%;
-padding:18px 8%;
-display:flex;
-justify-content:space-between;
-align-items:center;
 position:fixed;
 top:0;
 left:0;
-z-index:999;
-background:rgba(0,0,0,0.5);
+width:100%;
+padding:18px 7%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(0,0,0,.5);
 backdrop-filter:blur(10px);
+z-index:999;
 border-bottom:1px solid #00eeff33;
 }
 
 .logo{
-font-size:28px;
+font-size:30px;
 font-weight:900;
 color:#00eeff;
-text-shadow:0 0 15px #00eeff;
+text-shadow:0 0 20px #00eeff;
 }
 
 nav ul{
 display:flex;
-gap:20px;
+gap:25px;
 list-style:none;
 }
 
@@ -57,7 +68,7 @@ nav ul li a{
 text-decoration:none;
 color:white;
 font-weight:600;
-transition:0.3s;
+transition:.3s;
 }
 
 nav ul li a:hover{
@@ -78,97 +89,170 @@ linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)),
 url('https://wallpapercave.com/wp/wp5128415.jpg');
 background-size:cover;
 background-position:center;
+position:relative;
+overflow:hidden;
 }
 
-.hero-content h1{
-font-size:65px;
+.hero::before{
+content:'';
+position:absolute;
+width:600px;
+height:600px;
+background:#00eeff22;
+filter:blur(100px);
+border-radius:50%;
+animation:move 6s infinite alternate;
+}
+
+@keyframes move{
+from{
+transform:translate(-150px,-100px);
+}
+to{
+transform:translate(150px,100px);
+}
+}
+
+.hero-content{
+position:relative;
+z-index:2;
+}
+
+.hero h1{
+font-size:75px;
 font-weight:900;
 color:#00eeff;
 text-shadow:0 0 30px #00eeff;
 }
 
-.hero-content p{
+.hero p{
 margin-top:15px;
-font-size:20px;
+font-size:22px;
 color:#ddd;
 }
 
-.glow-btn{
-display:inline-block;
-margin-top:25px;
-padding:15px 35px;
-background:#00eeff;
-color:#000;
-font-weight:800;
-border-radius:15px;
-text-decoration:none;
-box-shadow:0 0 25px #00eeff;
-transition:.3s;
+.hero-buttons{
+margin-top:30px;
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
 }
 
-.glow-btn:hover{
+.btn{
+padding:15px 35px;
+border-radius:15px;
+text-decoration:none;
+font-weight:800;
+transition:.3s;
+display:inline-block;
+}
+
+.primary-btn{
+background:#00eeff;
+color:#000;
+box-shadow:0 0 25px #00eeff;
+}
+
+.primary-btn:hover{
 transform:scale(1.08);
-box-shadow:0 0 40px #00eeff;
+}
+
+.secondary-btn{
+border:2px solid #00eeff;
+color:#00eeff;
+}
+
+.secondary-btn:hover{
+background:#00eeff;
+color:#000;
+}
+
+/* LIVE POPUP */
+
+.live-popup{
+position:fixed;
+bottom:20px;
+left:20px;
+background:#091226;
+padding:15px 20px;
+border-radius:15px;
+border:1px solid #00eeff55;
+box-shadow:0 0 20px #00eeff33;
+z-index:999;
+animation:popup 2s infinite alternate;
+}
+
+@keyframes popup{
+from{
+transform:translateY(0);
+}
+to{
+transform:translateY(-8px);
+}
+}
+
+/* SECTION */
+
+.section-title{
+text-align:center;
+font-size:45px;
+margin-bottom:40px;
+color:#00eeff;
+text-shadow:0 0 15px #00eeff;
 }
 
 /* OFFER */
 
 .offer{
-padding:70px 8%;
-text-align:center;
-}
-
-.offer h2{
-font-size:45px;
-color:#00eeff;
-margin-bottom:15px;
-text-shadow:0 0 15px #00eeff;
+padding:100px 8%;
 }
 
 .offer-box{
+max-width:750px;
 margin:auto;
-max-width:700px;
+background:#091226;
 padding:40px;
 border-radius:25px;
-background:#091226;
-border:2px solid #00eeff55;
-box-shadow:0 0 30px #00eeff33;
+text-align:center;
 position:relative;
+border:2px solid #00eeff55;
+box-shadow:0 0 30px #00eeff22;
 overflow:hidden;
 }
 
 .tag{
 position:absolute;
 top:20px;
-right:-35px;
+right:-40px;
 background:#00eeff;
 color:#000;
-padding:10px 45px;
-font-weight:800;
+padding:10px 50px;
+font-weight:900;
 transform:rotate(45deg);
 }
 
-.offer-box h3{
-font-size:42px;
+.offer-box h2{
+font-size:48px;
 margin-top:20px;
-color:#fff;
 }
 
-.lvl{
+.offer-box .lvl{
 margin-top:10px;
-font-size:30px;
-font-weight:700;
+font-size:28px;
 color:#00eeff;
+font-weight:700;
 }
 
 .features{
 margin-top:20px;
 line-height:2;
 font-size:18px;
+color:#ddd;
 }
 
 .price{
-margin-top:25px;
+margin-top:20px;
 }
 
 .old{
@@ -179,47 +263,81 @@ margin-right:10px;
 }
 
 .new{
-font-size:50px;
+font-size:55px;
 font-weight:900;
 color:#00ff99;
-text-shadow:0 0 15px #00ff99;
+text-shadow:0 0 20px #00ff99;
 }
 
 .discount{
 margin-top:15px;
-font-size:25px;
-font-weight:800;
+font-size:28px;
+font-weight:900;
 color:#ffcc00;
 }
 
 .timer{
 margin-top:15px;
-font-size:18px;
+font-size:22px;
 color:#ff5555;
+font-weight:800;
+}
+
+/* SLIDER */
+
+.slider{
+padding:70px 0;
+overflow:hidden;
+white-space:nowrap;
+background:#091226;
+margin-top:50px;
+}
+
+.slide-track{
+display:inline-block;
+animation:slide 20s linear infinite;
+}
+
+.slide{
+display:inline-block;
+margin:0 20px;
+padding:15px 35px;
+background:#00eeff22;
+border:1px solid #00eeff55;
+border-radius:15px;
 font-weight:700;
 }
 
-/* ID CARDS */
+@keyframes slide{
+0%{
+transform:translateX(0);
+}
+100%{
+transform:translateX(-50%);
+}
+}
+
+/* CARDS */
 
 .cards{
-padding:70px 8%;
+padding:100px 8%;
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
 gap:30px;
 }
 
 .card{
-background:#0b1328;
-border-radius:20px;
+background:#091226;
+border-radius:25px;
 overflow:hidden;
 transition:.3s;
 border:1px solid #00eeff22;
-box-shadow:0 0 15px #000;
+position:relative;
 }
 
 .card:hover{
 transform:translateY(-10px);
-box-shadow:0 0 30px #00eeff55;
+box-shadow:0 0 30px #00eeff44;
 }
 
 .card img{
@@ -239,14 +357,13 @@ color:#00eeff;
 }
 
 .card-content p{
-font-size:15px;
 line-height:1.8;
 color:#ddd;
 }
 
 .card-price{
 margin-top:15px;
-font-size:35px;
+font-size:38px;
 font-weight:900;
 color:#00ff99;
 }
@@ -254,13 +371,13 @@ color:#00ff99;
 .buy-btn{
 display:inline-block;
 margin-top:18px;
-padding:12px 25px;
+padding:13px 28px;
 background:#00eeff;
 color:#000;
 font-weight:800;
-text-decoration:none;
 border-radius:12px;
-box-shadow:0 0 15px #00eeff;
+text-decoration:none;
+box-shadow:0 0 20px #00eeff;
 transition:.3s;
 }
 
@@ -268,14 +385,50 @@ transition:.3s;
 transform:scale(1.05);
 }
 
+/* LOGIN */
+
+.login{
+padding:100px 8%;
+text-align:center;
+}
+
+.login-box{
+max-width:500px;
+margin:auto;
+background:#091226;
+padding:40px;
+border-radius:25px;
+border:1px solid #00eeff44;
+}
+
+.login-box input{
+width:100%;
+padding:15px;
+margin:12px 0;
+border:none;
+outline:none;
+border-radius:12px;
+background:#101a33;
+color:white;
+}
+
+.login-box button{
+width:100%;
+padding:15px;
+background:#00eeff;
+border:none;
+font-weight:800;
+border-radius:12px;
+cursor:pointer;
+}
+
 /* FOOTER */
 
 footer{
-padding:40px;
+padding:50px;
 text-align:center;
 background:#030712;
-margin-top:50px;
-border-top:1px solid #00eeff33;
+border-top:1px solid #00eeff22;
 }
 
 footer h2{
@@ -284,34 +437,43 @@ margin-bottom:10px;
 }
 
 footer p{
-color:#ccc;
 margin-top:8px;
+color:#ccc;
 }
 
 /* MOBILE */
 
 @media(max-width:768px){
 
-.hero-content h1{
-font-size:42px;
+.hero h1{
+font-size:45px;
 }
 
-.offer h2{
+.hero p{
+font-size:18px;
+}
+
+.section-title{
 font-size:34px;
 }
 
-.offer-box h3{
-font-size:30px;
+.offer-box h2{
+font-size:34px;
 }
 
 .new{
-font-size:38px;
+font-size:42px;
+}
+
+nav ul{
+display:none;
 }
 
 }
 
 </style>
 </head>
+
 <body>
 
 <!-- NAVBAR -->
@@ -326,7 +488,7 @@ FF Rare ID Zone
 <li><a href="#">Home</a></li>
 <li><a href="#">Offers</a></li>
 <li><a href="#">Premium IDs</a></li>
-<li><a href="#">Contact</a></li>
+<li><a href="#">Login</a></li>
 </ul>
 
 </nav>
@@ -340,22 +502,38 @@ FF Rare ID Zone
 <h1>FF RARE ID ZONE</h1>
 
 <p>
-Premium Free Fire IDs With EVO Guns & Rare Bundles
+Premium Free Fire IDs With Rare Bundles & EVO Guns
 </p>
 
-<a href="#cards" class="glow-btn">
+<div class="hero-buttons">
+
+<a href="#cards" class="btn primary-btn">
 BUY NOW
 </a>
+
+<a href="#login" class="btn secondary-btn">
+LOGIN
+</a>
+
+</div>
 
 </div>
 
 </section>
 
+<!-- LIVE BUYER POPUP -->
+
+<div class="live-popup">
+🔥 Rahul purchased PRIME LVL 5 ID
+</div>
+
 <!-- OFFER -->
 
 <section class="offer">
 
-<h2>APRIL MEGA OFFER 🔥</h2>
+<h1 class="section-title">
+APRIL MEGA OFFER 🔥
+</h1>
 
 <div class="offer-box">
 
@@ -363,24 +541,35 @@ BUY NOW
 NEW
 </div>
 
-<h3>PRIME LVL 5</h3>
+<h2>
+PRIME LVL 5
+</h2>
 
 <div class="lvl">
 LEVEL 68 • 9+ EVO
 </div>
 
 <div class="features">
+
 ✔ EVO MAX <br>
 ✔ RARE BUNDLES <br>
 ✔ 388 DIAMONDS <br>
 ✔ MONTHLY 21D <br>
 ✔ WATCH COLLECTION <br>
-✔ PREMIUM ACCOUNT
+✔ PREMIUM ACCOUNT READY
+
 </div>
 
 <div class="price">
-<span class="old">₹6999</span>
-<span class="new">₹999</span>
+
+<span class="old">
+₹6999
+</span>
+
+<span class="new">
+₹999
+</span>
+
 </div>
 
 <div class="discount">
@@ -399,7 +588,26 @@ BUY NOW
 
 </section>
 
-<!-- CARDS -->
+<!-- SLIDER -->
+
+<section class="slider">
+
+<div class="slide-track">
+
+<div class="slide">🔥 EVO GUN IDs</div>
+<div class="slide">💎 TOP-UP OFFERS</div>
+<div class="slide">👑 PREMIUM COLLECTION</div>
+<div class="slide">⚡ FAST DELIVERY</div>
+<div class="slide">🎁 APRIL SALE</div>
+<div class="slide">🔥 EVO GUN IDs</div>
+<div class="slide">💎 TOP-UP OFFERS</div>
+<div class="slide">👑 PREMIUM COLLECTION</div>
+
+</div>
+
+</section>
+
+<!-- ID CARDS -->
 
 <section class="cards" id="cards">
 
@@ -415,9 +623,9 @@ BUY NOW
 
 <p>
 ✔ EVO M1014 <br>
-✔ HIPHOP BUNDLE <br>
 ✔ GRANDMASTER <br>
-✔ 250+ SKINS
+✔ 250+ SKINS <br>
+✔ HIPHOP BUNDLE
 </p>
 
 <div class="card-price">
@@ -444,9 +652,9 @@ BUY NOW
 
 <p>
 ✔ 7 EVO GUNS <br>
-✔ RARE EMOTES <br>
 ✔ ANGELIC PANTS <br>
-✔ ELITE PASS
+✔ ELITE PASS <br>
+✔ RARE EMOTES
 </p>
 
 <div class="card-price">
@@ -472,9 +680,9 @@ BUY NOW
 <h3>CHEAP RANK PUSH ID</h3>
 
 <p>
+✔ EVO AK <br>
 ✔ GOOD STATS <br>
 ✔ 150+ DRESSES <br>
-✔ EVO AK <br>
 ✔ MALE ACCOUNT
 </p>
 
@@ -501,10 +709,10 @@ BUY NOW
 <h3>TOP-UP KING ID</h3>
 
 <p>
-✔ 5000 LIKES <br>
-✔ 400+ SKINS <br>
 ✔ EVO MP40 <br>
-✔ FEMALE ACCOUNT
+✔ 400+ SKINS <br>
+✔ FEMALE ACCOUNT <br>
+✔ 5000 LIKES
 </p>
 
 <div class="card-price">
@@ -530,10 +738,10 @@ BUY NOW
 <h3>VETERAN ACCOUNT</h3>
 
 <p>
-✔ OLD PLAYER ID <br>
 ✔ BLUE CRIMINAL <br>
-✔ 10+ EMOTES <br>
-✔ OG COLLECTION
+✔ OLD PLAYER ID <br>
+✔ OG COLLECTION <br>
+✔ 10+ EMOTES
 </p>
 
 <div class="card-price">
@@ -561,8 +769,8 @@ BUY NOW
 <p>
 ✔ 12 EVO GUNS <br>
 ✔ 600+ DRESSES <br>
-✔ VIP COLLECTION <br>
-✔ HEROIC ACCOUNT
+✔ HEROIC ACCOUNT <br>
+✔ VIP COLLECTION
 </p>
 
 <div class="card-price">
@@ -577,119 +785,25 @@ BUY NOW
 
 </div>
 
-<!-- CARD 7 -->
+</section>
 
-<div class="card">
+<!-- LOGIN -->
 
-<img src="https://wallpapercave.com/wp/wp9327680.jpg">
+<section class="login" id="login">
 
-<div class="card-content">
+<h1 class="section-title">
+MEMBER LOGIN
+</h1>
 
-<h3>GAMER PRO ID</h3>
+<div class="login-box">
 
-<p>
-✔ 350+ SKINS <br>
-✔ ELITE PASS <br>
-✔ RARE PETS <br>
-✔ LEGENDARY ACCOUNT
-</p>
+<input type="text" placeholder="Username">
 
-<div class="card-price">
-₹1299
-</div>
+<input type="password" placeholder="Password">
 
-<a href="#" class="buy-btn">
-BUY NOW
-</a>
-
-</div>
-
-</div>
-
-<!-- CARD 8 -->
-
-<div class="card">
-
-<img src="https://wallpapercave.com/wp/wp9327645.jpg">
-
-<div class="card-content">
-
-<h3>PREMIUM FEMALE ID</h3>
-
-<p>
-✔ ANGELIC BUNDLE <br>
-✔ 5 EVO GUNS <br>
-✔ RARE EMOTES <br>
-✔ TRENDING ACCOUNT
-</p>
-
-<div class="card-price">
-₹999
-</div>
-
-<a href="#" class="buy-btn">
-BUY NOW
-</a>
-
-</div>
-
-</div>
-
-<!-- CARD 9 -->
-
-<div class="card">
-
-<img src="https://wallpapercave.com/wp/wp9327601.jpg">
-
-<div class="card-content">
-
-<h3>OG ID COLLECTION</h3>
-
-<p>
-✔ OLD BADGES <br>
-✔ 200+ ITEMS <br>
-✔ HEROIC TITLE <br>
-✔ RARE ACCOUNT
-</p>
-
-<div class="card-price">
-₹1799
-</div>
-
-<a href="#" class="buy-btn">
-BUY NOW
-</a>
-
-</div>
-
-</div>
-
-<!-- CARD 10 -->
-
-<div class="card">
-
-<img src="https://wallpapercave.com/wp/wp9327550.jpg">
-
-<div class="card-content">
-
-<h3>ULTIMATE EVO KING</h3>
-
-<p>
-✔ FULL EVO MAX <br>
-✔ 700+ SKINS <br>
-✔ TOP COLLECTION <br>
-✔ LEGEND ACCOUNT
-</p>
-
-<div class="card-price">
-₹6999
-</div>
-
-<a href="#" class="buy-btn">
-BUY NOW
-</a>
-
-</div>
+<button>
+LOGIN NOW
+</button>
 
 </div>
 
@@ -699,7 +813,9 @@ BUY NOW
 
 <footer>
 
-<h2>FF Rare ID Zone</h2>
+<h2>
+FF Rare ID Zone
+</h2>
 
 <p>
 Trusted Free Fire ID Seller
@@ -707,6 +823,10 @@ Trusted Free Fire ID Seller
 
 <p>
 WhatsApp: +91 YOUR NUMBER
+</p>
+
+<p>
+Instagram: @ffrareidzone
 </p>
 
 <p>
