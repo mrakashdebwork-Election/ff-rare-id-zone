@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FF Rare ID Zone</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#050816;
+color:white;
+overflow-x:hidden;
+}
+
+/* NAVBAR */
+
+nav{
+width:100%;
+padding:18px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+position:fixed;
+top:0;
+left:0;
+z-index:999;
+background:rgba(0,0,0,0.5);
+backdrop-filter:blur(10px);
+border-bottom:1px solid #00eeff33;
+}
+
+.logo{
+font-size:28px;
+font-weight:900;
+color:#00eeff;
+text-shadow:0 0 15px #00eeff;
+}
+
+nav ul{
+display:flex;
+gap:20px;
+list-style:none;
+}
+
+nav ul li a{
+text-decoration:none;
+color:white;
+font-weight:600;
+transition:0.3s;
+}
+
+nav ul li a:hover{
+color:#00eeff;
+}
+
+/* HERO */
+
+.hero{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+background:
+linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)),
+url('https://wallpapercave.com/wp/wp5128415.jpg');
+background-size:cover;
+background-position:center;
+}
+
+.hero-content h1{
+font-size:65px;
+font-weight:900;
+color:#00eeff;
+text-shadow:0 0 30px #00eeff;
+}
+
+.hero-content p{
+margin-top:15px;
+font-size:20px;
+color:#ddd;
+}
+
+.glow-btn{
+display:inline-block;
+margin-top:25px;
+padding:15px 35px;
+background:#00eeff;
+color:#000;
+font-weight:800;
+border-radius:15px;
+text-decoration:none;
+box-shadow:0 0 25px #00eeff;
+transition:.3s;
+}
+
+.glow-btn:hover{
+transform:scale(1.08);
+box-shadow:0 0 40px #00eeff;
+}
+
+/* OFFER */
+
+.offer{
+padding:70px 8%;
+text-align:center;
+}
+
+.offer h2{
+font-size:45px;
+color:#00eeff;
+margin-bottom:15px;
+text-shadow:0 0 15px #00eeff;
+}
+
+.offer-box{
+margin:auto;
+max-width:700px;
+padding:40px;
+border-radius:25px;
+background:#091226;
+border:2px solid #00eeff55;
+box-shadow:0 0 30px #00eeff33;
+position:relative;
+overflow:hidden;
+}
+
+.tag{
+position:absolute;
+top:20px;
+right:-35px;
+background:#00eeff;
+color:#000;
+padding:10px 45px;
+font-weight:800;
+transform:rotate(45deg);
+}
+
+.offer-box h3{
+font-size:42px;
+margin-top:20px;
+color:#fff;
+}
+
+.lvl{
+margin-top:10px;
+font-size:30px;
+font-weight:700;
+color:#00eeff;
+}
+
+.features{
+margin-top:20px;
+line-height:2;
+font-size:18px;
+}
+
+.price{
+margin-top:25px;
+}
+
+.old{
+text-decoration:line-through;
+font-size:28px;
+color:#aaa;
+margin-right:10px;
+}
+
+.new{
+font-size:50px;
+font-weight:900;
+color:#00ff99;
+text-shadow:0 0 15px #00ff99;
+}
+
+.discount{
+margin-top:15px;
+font-size:25px;
+font-weight:800;
+color:#ffcc00;
+}
+
+.timer{
+margin-top:15px;
+font-size:18px;
+color:#ff5555;
+font-weight:700;
+}
+
+/* ID CARDS */
+
+.cards{
+padding:70px 8%;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+}
+
+.card{
+background:#0b1328;
+border-radius:20px;
+overflow:hidden;
+transition:.3s;
+border:1px solid #00eeff22;
+box-shadow:0 0 15px #000;
+}
+
+.card:hover{
+transform:translateY(-10px);
+box-shadow:0 0 30px #00eeff55;
+}
+
+.card img{
+width:100%;
+height:220px;
+object-fit:cover;
+}
+
+.card-content{
+padding:20px;
+}
+
+.card-content h3{
+font-size:24px;
+margin-bottom:10px;
+color:#00eeff;
+}
+
+.card-content p{
+font-size:15px;
+line-height:1.8;
+color:#ddd;
+}
+
+.card-price{
+margin-top:15px;
+font-size:35px;
+font-weight:900;
+color:#00ff99;
+}
+
+.buy-btn{
+display:inline-block;
+margin-top:18px;
+padding:12px 25px;
+background:#00eeff;
+color:#000;
+font-weight:800;
+text-decoration:none;
+border-radius:12px;
+box-shadow:0 0 15px #00eeff;
+transition:.3s;
+}
+
+.buy-btn:hover{
+transform:scale(1.05);
+}
+
+/* FOOTER */
+
+footer{
+padding:40px;
+text-align:center;
+background:#030712;
+margin-top:50px;
+border-top:1px solid #00eeff33;
+}
+
+footer h2{
+color:#00eeff;
+margin-bottom:10px;
+}
+
+footer p{
+color:#ccc;
+margin-top:8px;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.hero-content h1{
+font-size:42px;
+}
+
+.offer h2{
+font-size:34px;
+}
+
+.offer-box h3{
+font-size:30px;
+}
+
+.new{
+font-size:38px;
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+
+<nav>
+
+<div class="logo">
+FF Rare ID Zone
+</div>
+
+<ul>
+<li><a href="#">Home</a></li>
+<li><a href="#">Offers</a></li>
+<li><a href="#">Premium IDs</a></li>
+<li><a href="#">Contact</a></li>
+</ul>
+
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>FF RARE ID ZONE</h1>
+
+<p>
+Premium Free Fire IDs With EVO Guns & Rare Bundles
+</p>
+
+<a href="#cards" class="glow-btn">
+BUY NOW
+</a>
+
+</div>
+
+</section>
+
+<!-- OFFER -->
+
+<section class="offer">
+
+<h2>APRIL MEGA OFFER 🔥</h2>
+
+<div class="offer-box">
+
+<div class="tag">
+NEW
+</div>
+
+<h3>PRIME LVL 5</h3>
+
+<div class="lvl">
+LEVEL 68 • 9+ EVO
+</div>
+
+<div class="features">
+✔ EVO MAX <br>
+✔ RARE BUNDLES <br>
+✔ 388 DIAMONDS <br>
+✔ MONTHLY 21D <br>
+✔ WATCH COLLECTION <br>
+✔ PREMIUM ACCOUNT
+</div>
+
+<div class="price">
+<span class="old">₹6999</span>
+<span class="new">₹999</span>
+</div>
+
+<div class="discount">
+FLAT 76% OFF
+</div>
+
+<div class="timer">
+LIMITED TIME • HURRY UP!
+</div>
+
+<a href="#" class="buy-btn">
+BUY NOW
+</a>
+
+</div>
+
+</section>
+
+<!-- CARDS -->
+
+<section class="cards" id="cards">
+
+<!-- CARD 1 -->
+
+<div class="card">
+
+<img src="https://wallpapercave.com/wp/wp7421236.jpg">
+
+<div class="card-content">
+
+<h3>LEVEL 60 PREMIUM</h3>
+
+<p>
+✔ EVO M1014 <br>
+✔ HIPHOP BUNDLE <br>
+✔ GRANDMASTER <br>
+✔ 250+ SKINS
+</p>
+
+<div class="card-price">
+₹799
+</div>
+
+<a href="#" class="buy-btn">
+BUY NOW
+</a>
+
+</div>
+
+</div>
+
+<!-- CARD 2 -->
+
+<div class="card">
+
+<img src="https://wallpapercave.com/wp/wp7977778.jpg">
+
+<div class="card-content">
+
+<h3>ULTRA LEGEND ID</h3>
+
+<p>
+✔ 7 EVO GUNS <br>
+✔ RARE EMOTES <br>
+✔ ANGELIC PANTS <br>
+✔ ELITE PASS
+</p>
+
+<div class="card-price">
+₹1499
+</div>
+
+<a href="#" class="buy-btn">
+BUY NOW
+</a>
+
+</div>
+
+</div>
+
+<!-- CARD 3 -->
+
+<div class="card">
+
+<img src="https://wallpapercave.com/wp/wp7656508.jpg">
+
+<div class="card-content">
+
+<h3>CHEAP RANK PUSH ID</h3>
+
+<p>
+✔ GOOD STATS <br>
+✔ 150+ DRESSES <br>
+✔ EVO AK <br>
+✔ MALE ACCOUNT
+</p>
+
+<div class="card-price">
+₹599
+</div>
+
+<a href="#" class="buy-btn">
+BUY NOW
+</a>
+
+</div>
+
+</div>
+
+<!-- CARD 4 -->
+
+<div class="card">
+
+<img src="https://wallpapercave.com/wp/wp9327665.jpg">
+
+<div class="card-content">
+
+<h3>TOP-UP KING ID</h3>
+
+<p>
+✔ 5000 LIKES <br>
+✔ 400+ SKINS <br>
+✔ EVO MP40 <br>
+✔ FEMALE ACCOUNT
+</p>
+
+<div class="card-price">
+₹1999
+</div>
+
+<a href="#" class="buy-btn">
+BUY NOW
+</a>
+
+</div>
+
+</div>
+
+<!-- CARD 5 -->
+
+<div class="card">
+
+<img src="https://wallpapercave.com/wp/wp9327711.jpg">
+
+<div class="card-content">
+
+<h3>VETERAN ACCOUNT</h3>
+
+<p>
+✔ OLD PLAYER ID <br>
+✔ BLUE CRIMINAL <br>
+✔ 10+ EMOTES <br>
+✔ OG COLLECTION
+</p>
+
+<div class="card-price">
+₹2999
+</div>
+
+<a href="#" class="buy-btn">
+BUY NOW
+</a>
+
+</div>
+
+</div>
+
+<!-- CARD 6 -->
+
+<div class="card">
+
+<img src="https://wallpapercave.com/wp/wp9327692.jpg">
+
+<div class="card-content">
+
+<h3>MAX EVO ACCOUNT</h3>
+
+<p>
+✔ 12 EVO GUNS <br>
+✔ 600+ DRESSES <br>
+✔ VIP COLLECTION <br>
+✔ HEROIC ACCOUNT
+</p>
+
+<div class="card-price">
+₹4999
+</div>
+
+<a href="#" class="buy-btn">
+BUY NOW
+</a>
+
+</div>
+
+</div>
+
+<!-- CARD 7 -->
+
+<div class="card">
+
+<img src="https://wallpapercave.com/wp/wp9327680.jpg">
+
+<div class="card-content">
+
+<h3>GAMER PRO ID</h3>
+
+<p>
+✔ 350+ SKINS <br>
+✔ ELITE PASS <br>
+✔ RARE PETS <br>
+✔ LEGENDARY ACCOUNT
+</p>
+
+<div class="card-price">
+₹1299
+</div>
+
+<a href="#" class="buy-btn">
+BUY NOW
+</a>
+
+</div>
+
+</div>
+
+<!-- CARD 8 -->
+
+<div class="card">
+
+<img src="https://wallpapercave.com/wp/wp9327645.jpg">
+
+<div class="card-content">
+
+<h3>PREMIUM FEMALE ID</h3>
+
+<p>
+✔ ANGELIC BUNDLE <br>
+✔ 5 EVO GUNS <br>
+✔ RARE EMOTES <br>
+✔ TRENDING ACCOUNT
+</p>
+
+<div class="card-price">
+₹999
+</div>
+
+<a href="#" class="buy-btn">
+BUY NOW
+</a>
+
+</div>
+
+</div>
+
+<!-- CARD 9 -->
+
+<div class="card">
+
+<img src="https://wallpapercave.com/wp/wp9327601.jpg">
+
+<div class="card-content">
+
+<h3>OG ID COLLECTION</h3>
+
+<p>
+✔ OLD BADGES <br>
+✔ 200+ ITEMS <br>
+✔ HEROIC TITLE <br>
+✔ RARE ACCOUNT
+</p>
+
+<div class="card-price">
+₹1799
+</div>
+
+<a href="#" class="buy-btn">
+BUY NOW
+</a>
+
+</div>
+
+</div>
+
+<!-- CARD 10 -->
+
+<div class="card">
+
+<img src="https://wallpapercave.com/wp/wp9327550.jpg">
+
+<div class="card-content">
+
+<h3>ULTIMATE EVO KING</h3>
+
+<p>
+✔ FULL EVO MAX <br>
+✔ 700+ SKINS <br>
+✔ TOP COLLECTION <br>
+✔ LEGEND ACCOUNT
+</p>
+
+<div class="card-price">
+₹6999
+</div>
+
+<a href="#" class="buy-btn">
+BUY NOW
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+<h2>FF Rare ID Zone</h2>
+
+<p>
+Trusted Free Fire ID Seller
+</p>
+
+<p>
+WhatsApp: +91 YOUR NUMBER
+</p>
+
+<p>
+© 2026 All Rights Reserved
+</p>
+
+</footer>
+
+</body>
+</html>
